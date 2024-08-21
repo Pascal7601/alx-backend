@@ -15,7 +15,7 @@ class BasicCache(BaseCaching):
         """
         adds data in the cahed_data dict
         """
-        if key or item is not None:
+        if key is not None or item is not None:
             self.cache_data[key] = item
 
     def get(self, key):
@@ -23,6 +23,6 @@ class BasicCache(BaseCaching):
         returns the value of the key
         in the cached_data
         """
-        if key not in self.cache_data.keys():
+        if key is None:
             return None
         return self.cache_data.get(key)
